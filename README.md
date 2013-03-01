@@ -19,7 +19,7 @@ other users and developers.
 
 ## Quick Start
 
-1. Install doozerd: `go get github.com/4ad/doozerd`
+1. Install doozerd: `go get github.com/dustismo/doozerd`
 4. Start a doozerd with a WebView listening on `:8080`
 
         $ doozerd -w ":8080"

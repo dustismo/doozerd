@@ -1,7 +1,7 @@
 package consensus
 
 import (
-	"github.com/4ad/doozerd/store"
+	"github.com/dustismo/doozerd/store"
 )
 
 type Proposer interface {

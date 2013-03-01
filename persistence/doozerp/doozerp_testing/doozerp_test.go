@@ -4,9 +4,9 @@ package doozerp_testing
 import (
 	"errors"
 	"fmt"
-	"github.com/4ad/doozerd/persistence"
-	"github.com/4ad/doozerd/persistence/doozerl"
-	"github.com/4ad/doozerd/store"
+	"github.com/dustismo/doozerd/persistence"
+	"github.com/dustismo/doozerd/persistence/doozerl"
+	"github.com/dustismo/doozerd/store"
 	"io"
 	"io/ioutil"
 	"os"

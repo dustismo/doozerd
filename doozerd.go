@@ -6,7 +6,8 @@ import (
 	"flag"
 	"fmt"
 	"github.com/4ad/doozer"
-	"github.com/4ad/doozerd/peer"
+	"github.com/dustismo/doozerd/peer"
+	"github.com/dustismo/doozerd/util"
 	"log"
 	"net"
 	"os"
@@ -131,21 +132,21 @@ func main() {
 		}
 	}
 
-	id := randId()
+	id := util.RandId()
 	var cl *doozer.Conn
 	switch {
 	case len(aaddrs) > 0 && *buri != "":
-		cl = attach(*name, aaddrs)
+		cl = util.Attach(*name, aaddrs)
 		if cl == nil {
-			cl = boot(*name, id, *laddr, *buri)
+			cl = util.Boot(*name, id, *laddr, *buri)
 		}
 	case len(aaddrs) > 0:
-		cl = attach(*name, aaddrs)
+		cl = util.Attach(*name, aaddrs)
 		if cl == nil {
 			panic("failed to attach")
 		}
 	case *buri != "":
-		cl = boot(*name, id, *laddr, *buri)
+		cl = util.Boot(*name, id, *laddr, *buri)
 	}
 
 	peer.Main(*name, id, *buri, rwsk, rosk, cl, usock, tsock, wsock, ns(*pi), ns(*fd), ns(*kt), *hi)
